@@ -2,8 +2,8 @@ import pandas as pd
 
 def find_book(book):
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
-    if book in list(df["book"]):
-        pos = df[df["book"] == book].index.tolist():
+    if book in list(df["books"]):
+        pos = df[df["books"] == book].index.tolist()
         print(df.iloc[pos,:])
     else: print("Sorry, we do not have book '{}' in our library".format(book))
 
