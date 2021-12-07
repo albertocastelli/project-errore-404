@@ -15,7 +15,7 @@ def top_writers():
   plt.bar(x = df_count.index, height = df_count["books"],
   color = ["c", "orange", "c", "orange", "c"])
   plt.show()
-  print(df.count.T)
+  print(df_count.T)
         
 def top_genre():
   df = pd.read_csv("data.csv", index_col=0, dtype=str)
@@ -27,5 +27,5 @@ def top_genre():
   plt.bar(x = df_count.index, height = df_count["books"],
   color = ["c", "orange", "c", "orange", "c"])
   plt.show()
-  print(df.count.T)
+  print(df_count.T)
         
