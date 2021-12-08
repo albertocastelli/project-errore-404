@@ -34,3 +34,21 @@ def add_change_value(book, col, value):
         return "please insert valid inputs"
 
 
+def add_book(n_book):
+    df = pd.read_csv("data.csv", index_col = 0, dtype = str)
+    if isinstance(n_book,str):
+        if "," not in n_book:
+            if n_book in list(df["books"]):
+                return "This book is already present in the database"
+            else:
+                df.loc[len(df.index)] = [n_book] + [np.nan for x in range(len(df.loc[0]) - 1)]
+                df.to_csv("data.csv")
+                return "Changes have been made"
+        elif "," in n_book:
+            return "Please, do not insert any comma ',' as new value"
+    elif not isinstance(n_book,str):
+        return "Please insert a string with a name for the new book"
+    else:
+        return "Please insert a valid input"
+
+
