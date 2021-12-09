@@ -11,4 +11,12 @@ class TestInput(unittest.TestCase):
         self.assertEqual(add_book("a game of thrones"), "changes have been made")
         self.assertEqual(add_change_value("divine comedy", "publication_date", "1472"), "changes have been made")
 
-        
+    def test_wrong_values(self):
+        self.assertEqual(add_column("any_string_with_comma ',' "),
+        "please, don't insert any comma ',' as new value")
+        self.assertEqual(add_book("any_book's_name with comma , "),
+        "please, don't insert any comma ',' as new value")
+        self.assertEqual(add_change_value("it", "publication_date", "any_string_with_comma , "),
+        "please, don't insert any comma ',' as new value")
+
+    
