@@ -4,8 +4,20 @@ import numpy as np
 
 def add_col(col):
     df = pd.read_csv(("data.csv"), index_col = 0, dtype = str)
-    df[col] = np.nan
-    df.to_csv("data.csv")
+    if isinstance(col, str):
+        if "," not in col:
+            if col in list (df.columns):
+                return "this column is already present in the database"
+            else:
+                df[col] = np.nan
+                df.to_csv("data.csv")
+                return "changes have been made"
+        elif "," in col:
+            return "please do not insert any commas ',' as new value"
+    elif not isinstance(col, str):
+        return "please insert a string with a name for the new column"
+    else:
+        return "please insert a valid input"
 
 
 def add_book(book):
