@@ -19,4 +19,7 @@ class TestInput(unittest.TestCase):
         self.assertEqual(add_change_value("it", "publication_date", "any_string_with_comma , "),
         "please, don't insert any comma ',' as new value")
 
-    
+    def test_already_present_values(self):
+        self.assertEqual(add_column("publication date"), "this column is already present in the database")
+        self.assertEqual(add_book("it"), "this book is already present in the database")
+        
