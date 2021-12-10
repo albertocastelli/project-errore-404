@@ -37,6 +37,7 @@ parser.add_argument("--book", type = str, choices= list(df["books"]), help = "in
 "name of a valid book")
 parser.add_argument("--writer", type = str, choices= list(df["writers"]), help = "insert a string with "
 "the name of a valid writer")
+parser.add_argument("--col", type=str, choices= list(df.columns), help="insert a string with the name of a valid column")
 parser.add_argument("--n_book", type = str, help = "insert a string with the name of the new book")
 parser.add_argument("--n_col", type = str, help = "insert a string with the name of the new column")
 parser.add_argument("--n_value", type = str, help = "insert a string with the new value")
