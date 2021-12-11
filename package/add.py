@@ -3,6 +3,20 @@ import numpy as np
 
 
 def add_col(col):
+    """ This function allows the user to insert a new column  to the dataframe loaded.
+    Before being able to actually insert the new column, some aspects have to be checked:
+    - if the input is a string
+    - if it contains commas
+    - if it already exists in the dataframe
+    
+    If the column name alredy exists in the dataframe, it will not be added;
+    if the column name is not a string, the user will be asked to insert a string value;
+    if the the column name is a string, does not exist in the dataframe but has a comma in the name, 
+       the user will be asked to change the column name to one without commas;
+    if the column name is a string, does not exist in the framework and has no commas in the name, 
+       it will ba added to data.csv
+    """
+    
     # open the dataset as df
     df = pd.read_csv(("data.csv"), index_col = 0, dtype = str)
     # take as input a new column and check if it is a string
