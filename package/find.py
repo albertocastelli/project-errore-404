@@ -12,13 +12,23 @@ def find_book(book):
     that the searched book was not found.
     """
 
+    # the function opens the dataset as df
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
+    # the function takes as input the title of the book
+    # if the book is present in the dataframe
     if book in list(df["books"]):
+        # pos variable memorises the row where the searched book is present
         pos = df[df["books"] == book].index.tolist()
+        # the function shows all information contained in the dataframe related to the book
         print(df.iloc[pos,:])
+    # if the input is invalid
     elif book == None:
+        # the function asks to insert an actual book title
         print ("please insert a real name of a book")
-    else: print("Sorry, we do not have book '{}' in our library".format(book))
+    # if the book is not present in the dataframe
+    else: 
+        # the function prints the following message
+        print("Sorry, we do not have book '{}' in our library".format(book))
 
 
 def find_writer(writer):
