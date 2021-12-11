@@ -17,7 +17,7 @@ def find_book(book):
     # the function takes as input the title of the book
     # if the book is present in the dataframe
     if book in list(df["books"]):
-        # pos variable memorises the row where the searched book is present
+        # pos memorises the row where the searched book is present
         pos = df[df["books"] == book].index.tolist()
         # the function shows all information contained in the dataframe related to the book
         print(df.iloc[pos,:])
@@ -43,10 +43,20 @@ def find_writer(writer):
     that the searched author was not found.
     """
 
+    # the function opens the dataset as df
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
+    # the function takes as input the name of the author
+    # if the writer is present in the dataframe
     if writer in list(df["writers"]):
+        # pos_s memorises the row (or rows) where the writer is present
         pos_s = df[df["writers"] == writer].index.tolist()
+        # the function shows all the books that the searched author has written
         print(df.iloc[pos_s,:])
+    # if the input is invalid
     elif writer == None:
+        # the function asks to insert an actual writer name
         print ("please insert a real name of a writer")
-    else: print("Sorry, we do not have writer '{}' in our library".format(writer))
+    # if the author is not present in the dataframe
+    else: 
+        # the function prints the following message
+        print("Sorry, we do not have writer '{}' in our library".format(writer))
