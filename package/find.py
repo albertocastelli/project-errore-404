@@ -6,10 +6,10 @@ def find_book(book):
 
     If the title of the book exists in the dataframe, the function will show all the information
     related to the searched name.
-    If the input entered by the user in invalid, the function will ask them to insert an actual book 
+    If the input entered by the user is invalid, the function will ask them to insert an actual book 
     title.
     If the title of the book does not exist in the dataframe, the function will show a message saying 
-    that the searched book is not present.
+    that the searched book was not found.
     """
 
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
@@ -22,6 +22,17 @@ def find_book(book):
 
 
 def find_writer(writer):
+    """This function allows the user to find out if a specific writer is present or not in the dataframe.
+    To do this, the function will receive as input the name of the author the user wants to find.
+
+    If the name of the writer is present in the dataframe, the function will show all the books the
+    searched author has written.
+    If the input entered by the user is invalid, the function will ask them to insert an actual writer
+    name.
+    If the name of the writer is not present in the dataframe, the function will show a message saying 
+    that the searched author was not found.
+    """
+
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
     if writer in list(df["writers"]):
         pos_s = df[df["writers"] == writer].index.tolist()
