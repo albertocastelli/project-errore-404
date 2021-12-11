@@ -12,9 +12,13 @@ The add_col function enables users to add any new column to the dataframe. Howev
 
 
 Indeed, if the column name already exists in the dataframe, it will not be added;
+
 if the column name is not a string, the user will be asked to insert a string value;
+
 if the the column name is a string, does not exist in the dataframe but has a comma in the name, the user will be asked to change the column name to one without commas;
+
 if the column name is a string, does not exist in the framework and has no commas in the name, it will be added to data.csv;
+
 whilst for any other instance of invalidity, a message saying to insert a valid input will be dispalyed.
 
 ### add_book()
