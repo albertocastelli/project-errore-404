@@ -9,12 +9,13 @@ def add_col(col):
     - if it contains commas
     - if it already exists in the dataframe
     
-    If the column name alredy exists in the dataframe, it will not be added;
+    If the column name already exists in the dataframe, it will not be added;
     if the column name is not a string, the user will be asked to insert a string value;
     if the the column name is a string, does not exist in the dataframe but has a comma in the name, 
        the user will be asked to change the column name to one without commas;
     if the column name is a string, does not exist in the framework and has no commas in the name, 
-       it will ba added to data.csv
+       it will be added to data.csv;
+    for any other instance of invalidity, a message saying to insert a valid input will be dispalyed.
     """
     
     # open the dataset as df
@@ -61,6 +62,21 @@ def add_change_value(book, col, value):
 
 
 def add_book(n_book):
+    """ This function allows the user to insert a new book to the dataframe loaded.
+    Before being able to actually insert the new book, some aspects have to be checked:
+    - if the input is a string
+    - if it contains commas
+    - if it already exists in the dataframe
+    
+    If the book name already exists in the dataframe, it will not be added;
+    if the book name is not a string, the user will be asked to insert a string value;
+    if the the book name is a string, does not exist in the dataframe but has a comma in the name, 
+       the user will be asked to change the book name to one without commas;
+    if the book name is a string, does not exist in the framework and has no commas in the name, 
+       it will be added to data.csv, under the column name 'books', and the other related columns
+       (ie writers) will be left with a nan value;
+    for any other instance of invalidity, a message saying to insert a valid input will be dispalyed.
+    """
     # open the data set as df
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
     # take a new book title and check if it is a string
@@ -73,7 +89,7 @@ def add_book(n_book):
                 return "this book is already present in the database"
             # if book title not in df yet
             else:
-                # use the book title as index of the column 0 'books' + insert nan to the other columns (ie writers, genre)
+                # add the book title to column 0 'books' + insert nan values to the rest of the row wrt other columns (ie writers, genre)
                 df.loc[len(df.index)] = [n_book] + [np.nan for x in range(len(df.loc[0]) - 1)]
                 # attach changes to csv and return message of changes succefully made
                 df.to_csv("data.csv")
