@@ -26,9 +26,8 @@ def find_book(book):
         # the function asks to insert an actual book title
         print ("please insert a real name of a book")
     # if the book is not present in the dataframe
-    else: 
-        # the function prints the following message
-        print("Sorry, we do not have book '{}' in our library".format(book))
+    # the function prints the following message
+    else: print("Sorry, we do not have book '{}' in our library".format(book))
 
 
 def find_writer(writer):
@@ -57,6 +56,5 @@ def find_writer(writer):
         # the function asks to insert an actual writer name
         print ("please insert a real name of a writer")
     # if the author is not present in the dataframe
-    else: 
-        # the function prints the following message
-        print("Sorry, we do not have writer '{}' in our library".format(writer))
+    # the function prints the following message
+    else: print("Sorry, we do not have writer '{}' in our library".format(writer))
