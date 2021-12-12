@@ -49,8 +49,8 @@ def add_change_value(book, col, value):
     """ This function allows the user to add or change specific information inside a cell of the dataframe.
     
     The function needs 3 inputs:
-    - book: the book to which the user wants to make changes;
-    - col: the column to which the user wants to make changes;
+    - book: the book on which the user wants to make changes;
+    - col: the column in which the user wants to make changes;
     - value: the values the users wants to put in the cell.
     The accepted 'book' values are the books that are already present in the column "books". 
     The accepted 'col' values are the names of the columns already present in the dataset.
