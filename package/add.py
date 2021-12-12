@@ -46,14 +46,35 @@ def add_col(col):
 
 
 def add_change_value(book, col, value):
+    """ This function allows the user to add or change specific information inside a cell of the dataframe.
+    
+    The function needs 3 inputs:
+    - book: the book to which the user wants to make changes;
+    - col: the column to which the user wants to make changes;
+    - value: the values the users wants to put in the cell.
+    The accepted 'book' values are the books that are already present in the column "books". 
+    The accepted 'col' values are the names of the columns already present in the dataset.
+    The accepted 'value' values are all the strings which do not contain any commas, since introducing any comma
+    would change the behavior of the data.csv
+    """
+    # The function opens the dataset
     df = pd.read_csv("data.csv", index_col = 0, dtype = str)
+    # It checks whether 'book' and 'col' are present in the dataset.
+    # If they are present, the function proceeds. Otherwise it
+    # prints that there are some problems
     if book in list(df["books"]) and col in list(df.columns):
+        # Checks if 'values' is a string, important for the correct functioning of the code
         if isinstance(value,str):
+            # Checks if 'value' has a ',' inside of it because in such case the function won't work
             if "," not in value:
+                # In case everything is alright, the function will work correctly, changing the 
+                # given cell with the new 'value' inserted by the user and printing the following
+                # message: " changes have been made "
                 df.loc[df[df["books"]==book].index.tolist()[0], col] = value
                 df.to_csv("data.csv")
                 return "changes have been made"
             elif "," in value:
+                # If it finds any comma, it will ask the user not to use any
                 return "please, don't insert any comma ',' as new value"
         elif not isinstance(value,str):
             return "please insert a string with a valid new value"
