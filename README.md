@@ -39,9 +39,9 @@ This function allows the end user to modify and / or add additional information 
 
     This function needs 3 inputs:
     
-    - book: the book to which the user wants to make changes and the accepted values are names of books already present in the archive;
+    1- book: the book to which the user wants to make changes and the accepted values are names of books already present in the archive;
    
-    - col: the column to which the user wants to make changes and the accepted values are columns already present in the dataset;
+    2- col: the column to which the user wants to make changes and the accepted values are columns already present in the dataset;
    
-    - value: the values the users wants to put / add / modify in the cell. This is the only new and unknown input. The accepted values that can be inserted in this case are all the strings which do not contain any commas, since introducing any comma would change the behavior of the data.csv
+    3- value: the values the users wants to put / add / modify in the cell. This is the only new and unknown input. The accepted values that can be inserted in this case are all the strings which do not contain any commas, since introducing any comma would change the behavior of the data.csv
 The expected output is an update of the archive with the new/modified information that the user decided to insert.
