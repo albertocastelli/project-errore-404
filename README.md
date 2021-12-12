@@ -24,7 +24,6 @@ whilst for any other instance of invalidity, a message saying to insert a valid 
 ### add_book()
 The same reasoning and logic is applied to the add_book function. the aim of this function is to add a new row with the book name under the 'books' column, and add 'nan' to all the other columns (ie writers) in the same row. Also in thi case, commas, string inputs and existance in the dataframe have to be checked.
 
-
 If the book name already exists in the dataframe, it will not be added;
 
 if the book name is not a string, the user will be asked to insert a string value;
@@ -34,3 +33,11 @@ if the the book name is a string, does not exist in the dataframe but has a comm
 if the book name is a string, does not exist in the framework and has no commas in the name, it will be added to data.csv, under the column name 'books', and the other related columns (ie writers) will be left with a nan value;
 
 for any other instance of invalidity, a message saying to insert a valid input will be dispalyed.
+
+### add_change_value()
+This function allows the end user to modify and / or add additional information inside a cell of the dataframe. It basically allows the user to customize his library archive.
+    This function needs 3 inputs:
+    - book: the book to which the user wants to make changes and the accepted values are names of books already present in the archive;
+    - col: the column to which the user wants to make changes and the accepted values are columns already present in the dataset;
+    - value: the values the users wants to put / add / modify in the cell. This is the only new and unknown input. The accepted values that       can be inserted in this case are all the strings which do not contain any commas, since introducing any comma would change the behavior of     the data.csv
+The expected output is an update of the archive with the new/modified information that the user decided to insert.
