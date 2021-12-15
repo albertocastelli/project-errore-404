@@ -10,8 +10,8 @@ def show_database():
   print(df)
 
 def top_writers():
-  """ The function opens the dataframe and it creates a new dataframe, where it groups values by writer. It counts how many times writers show up and it puts them into an order
-  based on how many times they are counted. It takes into consideration only the first five writers. 
+  """ The function opens the dataframe and it creates a new dataframe, where it groups values by writer. It counts how many times writers show up and it puts them into an 
+  order based on how many times they are counted. It takes into consideration only the first five writers. 
   In the end it creates a barplot showing the database.
   """
   # The function opens the dataframe
@@ -31,8 +31,8 @@ def top_writers():
   print(df_count.T)
         
 def top_genre():
-  """ The function opens the dataframe and it creates a new dataframe, where it groups values by genre. It counts how many times genres show up and it puts them into an order
-  based on how many times they are counted. It takes into consideration only the first five genres. 
+  """ The function opens the dataframe and it creates a new dataframe, where it groups values by genre. It counts how many times genres show up and it puts them into an 
+  order based on how many times they are counted. It takes into consideration only the first five genres. 
   In the end it creates the graph showing the database.
   """
    # The function opens the dataframe
