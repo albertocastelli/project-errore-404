@@ -19,14 +19,19 @@ There are three tests done one add_column, add_book and add_change_value each ti
 # create a class
 class TestInput(unittest.TestCase):
 
-    # create the module to test known valid entries
+    # define a function to test known valid entries
     def test_correct_values(self):
         
-        
+        # create a test function using self.assertEqual for add_column, define the column name input to test inside the brackets, define the message to be displayed if the test is passed
         self.assertEqual(add_col("copies_sold"), "changes have been made")
+        
+        # create a test function using self.assertEqual for add_book, define the book name input to test inside the brackets, define the message to be displayed if the test is passed
         self.assertEqual(add_book("a game of thrones"), "changes have been made")
+        
+        # create a test function using self.assertEqual for add_change_value, define the inputs to test inside the brackets, define the message to be displayed if the test is passed
         self.assertEqual(add_change_value("divine comedy", "publication_date", "1472"), "changes have been made")
 
+    # define a function to test known invalid entries
     def test_wrong_values(self):
         self.assertEqual(add_col("any_string_with_comma , "),
         "please, don't insert any comma ',' as new value")
