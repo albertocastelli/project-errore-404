@@ -10,8 +10,10 @@ from package.show import show_database, top_genre, top_writers
 from package.find import find_book
 from package.find import find_writer
 
+# open the csv file
 df = pd.read_csv("data.csv", index_col = 0, dtype = str)
 
+# create a dictionary where each function created in the project is associated to a number in the dictionary
 fun = {
 "1":add_book,
 "2":add_col,
@@ -23,7 +25,9 @@ fun = {
 "8":find_book}
 
 # creating the parser for handling the inputs of the functions
+# create ArgumentParser obejct
 parser = argparse.ArgumentParser(description = "Handle the dataset of a library")
+# give information about the arguments, define the attributes ie 'command' will be a string and 'help'  will display the possible actions to take
 parser.add_argument("command", type = str, help = "insert a valid number: '1' for adding a book, "
  "'2' for adding a column, "
  "'3' for adding or changing specific values, "
@@ -33,8 +37,10 @@ parser.add_argument("command", type = str, help = "insert a valid number: '1' fo
  "'7' to look for a writer or"
  "'8' to look for a book." 
 , choices=fun.keys())
+
 parser.add_argument("--book", type = str, choices= list(df["books"]), help = "insert a string with the "
 "name of a valid book")
+
 parser.add_argument("--writer", type = str, choices= list(df["writers"]), help = "insert a string with "
 "the name of a valid writer")
 parser.add_argument("--col", type=str, choices= list(df.columns), help="insert a string with the name of a valid column")
