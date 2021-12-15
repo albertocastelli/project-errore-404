@@ -1,5 +1,5 @@
 import unittest
-from package.add import add_column
+from package.add import add_col
 from package.add import add_book
 from package.add import add_change_value
 
@@ -25,7 +25,7 @@ class TestInput(unittest.TestCase):
     def test_correct_values(self):
         
         # create a test function using self.assertEqual for add_column, define the column name input to test inside the brackets, define the message to be displayed if the test is passed
-        self.assertEqual(add_column("copies_sold"), "changes have been made")
+        self.assertEqual(add_col("copies_sold"), "changes have been made")
         
         # create a test function using self.assertEqual for add_book, define the book name input to test inside the brackets, define the message to be displayed if the test is passed
         self.assertEqual(add_book("a game of thrones"), "changes have been made")
@@ -37,7 +37,7 @@ class TestInput(unittest.TestCase):
     def test_wrong_values(self):
         
         # create a test function using self.assertEqual for add_column, specify in the brackets that any string with comma is the values to test, define the message to be displayed if the test is passed
-        self.assertEqual(add_column("any_string_with_comma ',' "), "please, don't insert any comma ',' as new value")
+        self.assertEqual(add_col("any_string_with_comma ',' "), "please, don't insert any comma ',' as new value")
         
         # create a test function using self.assertEqual for add_book, specify in the brackets that any book name with comma is the values to test, define the message to be displayed if the test is passed
         self.assertEqual(add_book("any_book's_name with comma ',' "), "please, don't insert any comma ',' as new value")
@@ -48,6 +48,8 @@ class TestInput(unittest.TestCase):
         
         
     def test_already_present_values(self):
-        self.assertEqual(add_column("publication date"), "this column is already present in the database")
+        self.assertEqual(add_col("publication date"), "this column is already present in the database")
         self.assertEqual(add_book("it"), "this book is already present in the database")
         
+if __name__ == '__main__':
+    unittest.main()
