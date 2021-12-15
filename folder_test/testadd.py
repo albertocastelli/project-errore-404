@@ -14,7 +14,7 @@ There are three tests done one add_col, add_book and add_change_value each time.
 - the test_wrong_values that checks if the known invalid errors (those containing a comma) are not accepted as expected. If the tests is passed, a "please, 
   don't insert any comma ',' as new value" message is returned.
 - as corner case, the test_already_present_values function that checks if an entry is already in the database and returns a message accordingly: 
-  for add_column, if the column we want to add already exits in the database, a "this column is already present in the database" message has to be displayed;
+  for add_col, if the column we want to add already exits in the database, a "this column is already present in the database" message has to be displayed;
   for add_book, if the book we want to add is already saved, a "this book is already present in the database" has to be displayed.
 
 """
@@ -24,7 +24,7 @@ class TestInput(unittest.TestCase):
     # define function to test known valid entries
     def test_correct_values(self):
         
-        # create a test function using self.assertEqual for add_column, define the column name input to test inside the brackets, 
+        # create a test function using self.assertEqual for add_col, define the column name input to test inside the brackets, 
         # define the message to be displayed if the test is passed
         self.assertEqual(add_col("copies_sold"), "changes have been made")
         
