@@ -74,3 +74,17 @@ There are three tests done one add_col, add_book and add_change_value each time.
 - as corner case, the test_already_present_values function that checks if an entry is already in the database and returns a message accordingly: 
   for add_col, if the column we want to add already exits in the database, a "this column is already present in the database" message has to be displayed;
   for add_book, if the book we want to add is already saved, a "this book is already present in the database" has to be displayed.
+  
+  
+### Argparse
+Argparse is used to manage the library functions. By calling the 'main' function, it is possible to select the function needed through the command - which is a number between 1 and 8.
+Based on the number typed, different functions are called and, consequently, you are asked to type different inputs.
+Given the numbers from 1 to 8, the asssociated functions are:
+1 - add_book
+2 - add_col
+3 - add_change_value
+4 - show_database
+5 - top_genre
+6 - top_writers
+7 - find_writer
+8 - find_book
